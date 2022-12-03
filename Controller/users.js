@@ -5,7 +5,10 @@ const Schema = Users.Schema;
 
 const users_show=(req,res)=>{
     const user = new Schema(req.body)
-    user
+    Schema.find((err,data)=>{
+        res.json(data)
+        
+    })
 }
 const user_create=(req,res)=>{
     res.send(req.body)
