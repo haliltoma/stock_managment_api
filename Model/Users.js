@@ -18,7 +18,6 @@ const Users = new Schema({
     },
     'relation_ship':[{
         'user_roles':{type:'string'},
-        'user_id':{type:'string'},
         'user_email':{type:'string'},
         'user_password':{type:'string'},
     }],
@@ -35,7 +34,7 @@ const Users = new Schema({
         'product_price':{type:'number'},
         'product_attirubute':{type:'string'},
     }],
-    'product_category':[{
+    'product_categories':[{
         'category_name':{type:'string'},
     }]
 })
