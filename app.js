@@ -45,8 +45,11 @@ app.use('/user',(req,res)=>{
 
 
 
-app.listen(Process.env.PORT || 5000,()=>{
-  console.log('halil')
+// app.listen(Process.env.PORT || 5000,()=>{
+//   console.log('halil')
+// })
+app.listen(process.env.PORT || 3000,()=>{
+  console.log('hello starting')
 })
 
 
