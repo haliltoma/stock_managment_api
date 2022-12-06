@@ -24,7 +24,7 @@ mongoose.connect('mongodb+srv://tomy27k:159753123h@schefingcluster.ll47xdd.mongo
 .catch(()=>console.log('Not Working on MongoDB'));
 app.use(cors());
 
-// app.use('/user',users)
+app.use('/user',users)
 app.use('/',(req,res)=>res.send('connection'))
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
