@@ -30,9 +30,9 @@ user.save((err,data)=>{
     
 }
 const user_update= (req,res)=>{
-    Schema.find('',(err,data)=>{
+    // Schema.find('',(err,data)=>{
         
-    })
+    // })
 }
 const user_delete= (req,res)=>{
     
