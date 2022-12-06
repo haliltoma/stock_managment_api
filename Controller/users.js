@@ -1,5 +1,5 @@
 
-const Users = require('../Model/Users');
+const Users = require('../../Model/Users');
 const userSchema = require('../../validation/userValidation')
 
 const users_show=(req,res)=>{
