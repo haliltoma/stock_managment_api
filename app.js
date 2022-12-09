@@ -1,13 +1,18 @@
-var createError = require('http-errors');
-var express = require('express');
-var cors = require('cors');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+
+
+const createError = require('http-errors');
+const express = require('express');
+const cors = require('cors');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 
 const users = require('./routes/users');
+const categories = require('./routes/categories');
+const products = require('./routes/products');
+
 const mongoose = require('mongoose')
-var app = express();
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -19,12 +24,17 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-mongoose.connect('mongodb+srv://tomy27k:159753123h@schefingcluster.ll47xdd.mongodb.net/')
+mongoose.connect('mongodb+srv://tomy27k:159753123h@schefingcluster.ll47xdd.mongodb.net/Stock')
 .then(()=>console.log('connect to MongoDB'))
 .catch(()=>console.log('Not Working on MongoDB'));
 app.use(cors());
 
-app.use('/user',users)
+app.use('/api/users',users)
+app.use('/api/categories',categories)
+app.use('/api/products',products)
+
+
+
 app.use('/',(req,res)=>res.send('connection'))
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

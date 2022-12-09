@@ -1,5 +1,5 @@
 const express = require('express');
-const { index,show, store, update, destroy,destroyAll } = require('../Controller/UserController');
+const { index,show, store, update, destroy } = require('../Controller/ProductController');
 const router = express.Router();
 
 router.get('/',index); //users_show
